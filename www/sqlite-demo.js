@@ -1,8 +1,6 @@
-function openDatabase (filename, flags, key, cb, errorCallback) {
+function openDatabaseConnection (options, cb, errorCallback) {
   cordova.exec(cb, errorCallback, 'SQLiteDemo', 'openDatabaseConnection', [
-    filename,
-    flags,
-    key
+    options
   ])
 }
 
@@ -13,6 +11,7 @@ function executeBatch (connectionId, batchList, cb) {
   ])
 }
 
-window.openDatabaseConnection = openDatabaseConnection
-
-window.executeBatch = executeBatch
+window.sqliteBatchConnection = {
+  openDatabaseConnection: openDatabaseConnection,
+  executeBatch: executeBatch
+}

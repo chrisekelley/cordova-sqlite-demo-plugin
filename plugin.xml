@@ -1,4 +1,4 @@
-<plugin id="cordova-sqlite-demo-plugin" version="0.0.2-dev">
+<plugin id="cordova-sqlite-demo-plugin" version="0.0.1-dev">
   <name>cordova sqlite demo plugin</name>
 
   <!--
@@ -9,19 +9,19 @@
     * https://cordova.apache.org/docs/en/latest/guide/platforms/ios/plugin.html
   -->
 
-  <js-module src="www/SQLitePlugin.js" name="SQLitePlugin">
+  <js-module src="www/sqlite-demo.js" name="SQLiteDemo">
     <!-- keep it simple: -->
     <runs />
   </js-module>
 
   <platform name="android">
     <config-file target="config.xml" parent="/*">
-      <feature name="SQLitePlugin">
-        <param name="android-package" value="io.sqlc.SQLitePlugin"/>
+      <feature name="SQLiteDemo">
+        <param name="android-package" value="com.demo.SQLiteDemo" />
       </feature>
     </config-file>
-    <source-file src="src/android/SQLitePlugin.java" target-dir="src/io/sqlc" />
-    <source-file src="src/android/SCCoreGlue.java" target-dir="src/io/sqlc" />
-    <lib-file src="dependencies/android-database-sqlcipher-connection-core-glue-ndk.jar" />
+    <source-file src="src/android/SQLiteDemo.java" target-dir="src/com/demo" />
+    <source-file src="dependencies/SCCoreGlue.java" target-dir="src/io/sqlc" />
+    <lib-file src="dependencies/android-database-sqlcipher-crypto-connection-core-glue-ndk.jar" />
   </platform>
 </plugin>
